@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00002004  2**0
                   CONTENTS, READONLY
- 12 .debug_info   000012fa  00000000  00000000  00002034  2**0
+ 12 .debug_info   000012d1  00000000  00000000  00002034  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000052d  00000000  00000000  0000332e  2**0
+ 13 .debug_abbrev 0000053e  00000000  00000000  00003305  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 000001d8  00000000  00000000  00003860  2**3
+ 14 .debug_aranges 000001d8  00000000  00000000  00003848  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 0000014b  00000000  00000000  00003a38  2**0
+ 15 .debug_rnglists 0000014b  00000000  00000000  00003a20  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0000e058  00000000  00000000  00003b83  2**0
+ 16 .debug_macro  0001371f  00000000  00000000  00003b6b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00001f60  00000000  00000000  00011bdb  2**0
+ 17 .debug_line   000018dd  00000000  00000000  0001728a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0007e125  00000000  00000000  00013b3b  2**0
+ 18 .debug_str    0007dfff  00000000  00000000  00018b67  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00091c60  2**0
+ 19 .comment      00000043  00000000  00000000  00096b66  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000590  00000000  00000000  00091ca4  2**2
+ 20 .debug_frame  00000590  00000000  00000000  00096bac  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000092  00000000  00000000  00092234  2**0
+ 21 .debug_line_str 00000092  00000000  00000000  0009713c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -294,7 +294,7 @@ int main (void){
  8000314:	4a08      	ldr	r2, [pc, #32]	@ (8000338 <main+0x34>)
  8000316:	f043 0320 	orr.w	r3, r3, #32
  800031a:	6153      	str	r3, [r2, #20]
-		delay(1000000);
+		delay(10000000);
  800031c:	4807      	ldr	r0, [pc, #28]	@ (800033c <main+0x38>)
  800031e:	f7ff ffdf 	bl	80002e0 <delay>
 
@@ -305,14 +305,14 @@ int main (void){
  8000326:	4a04      	ldr	r2, [pc, #16]	@ (8000338 <main+0x34>)
  8000328:	f023 0320 	bic.w	r3, r3, #32
  800032c:	6153      	str	r3, [r2, #20]
-		delay(1000000);
+		delay(10000000);
  800032e:	4803      	ldr	r0, [pc, #12]	@ (800033c <main+0x38>)
  8000330:	f7ff ffd6 	bl	80002e0 <delay>
 		GPIOA->ODR |= (1 << 5);
  8000334:	bf00      	nop
  8000336:	e7eb      	b.n	8000310 <main+0xc>
  8000338:	40020000 	.word	0x40020000
- 800033c:	000f4240 	.word	0x000f4240
+ 800033c:	00989680 	.word	0x00989680
 
 08000340 <NMI_Handler>:
 /******************************************************************************/

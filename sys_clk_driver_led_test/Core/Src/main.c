@@ -85,11 +85,11 @@ int main (void){
 
 		//turn LED on
 		GPIOA->ODR |= (1 << 5);
-		delay(1000000);
+		delay(10000000);
 
 		//turn LED off
 		GPIOA->ODR &= ~(1<< 5);
-		delay(1000000);
+		delay(10000000);
 
 
 	}
