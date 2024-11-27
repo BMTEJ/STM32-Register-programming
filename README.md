@@ -6,4 +6,4 @@ main.c for each can be found in Core/Src/main.c
 
 MCU board: STM32F401RE, a Nucleo.
 
-STM32F401RE reference material: https://www.st.com/en/microcontrollers-microprocessors/stm32f401/documentation.html
+STM32F401RE reference sheet and datasheet: https://www.st.com/en/microcontrollers-microprocessors/stm32f401/documentation.html
