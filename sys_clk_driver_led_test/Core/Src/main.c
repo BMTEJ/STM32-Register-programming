@@ -2,6 +2,7 @@
 
 #include "stm32f401xe.h"
 
+
 void SysClockConfig(){
 	/**********************>>>>> STEPS FOLLOWED <<<<<***********************
 				1. ENABLE HSE and wait for the HSE to become Ready
@@ -17,7 +18,7 @@ void SysClockConfig(){
 
 		#define PLL_M 4 // Divide PLL input by 4. 8/4 = 2MHz input
 		#define PLL_N 84 // Multiply frequency by 84. 2 * 84 = 168Mhz
-		#define PLL_P 0 // Divide frquency by 2. 168/2 = 84Mhz
+		#define PLL_P 0 // Divide frequency by 2. 168/2 = 84Mhz
 
 
 		//1. ENABLE HSE and wait for the HSE to become Ready
@@ -35,11 +36,11 @@ void SysClockConfig(){
 		FLASH->ACR |= (2 << 0); //Set flash latency to two wait states (3 CPU cycles)
 
 		//4. Configure the PRESCALARS HCLK, PCLK1, PCLK2
-		RCC->CFGR |= (0 << 4) | (4 << 10) | (0 << 13); //AHB not divided | APB1 divided by 2 | APB2 not divided
+		RCC->CFGR = (0 << 4) | (4 << 10) | (0 << 13); //AHB not divided | APB1 divided by 2 | APB2 not divided
 
 		//5. Configure the MAIN PLL
 		//PLL input divison factor of 4 | PLL output multiplication factor of 84 | PLL output division factor of 2 | HSE selected as PLL src.
-		RCC->PLLCFGR |= (PLL_M << 0) | (PLL_N << 6) | (PLL_P << 16) | (1 << 22);
+		RCC->PLLCFGR = (PLL_M << 0) | (PLL_N << 6) | (PLL_P << 16) | (1 << 22);
 
 		//6. Enable the PLL and wait for it to become ready
 		RCC->CR |= (1 << 24); // enable PLL
