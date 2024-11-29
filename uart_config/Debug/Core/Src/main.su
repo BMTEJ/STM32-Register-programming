@@ -1,0 +1,6 @@
+../Core/Src/main.c:5:6:Usart2Config	4	static
+../Core/Src/main.c:33:6:UART2_SendChar	16	static
+../Core/Src/main.c:40:6:UART2_SendString	16	static
+../Core/Src/main.c:45:6:UART2_GetChar	16	static
+../Core/Src/main.c:61:6:LEDConfig	4	static
+../Core/Src/main.c:72:5:main	8	static
