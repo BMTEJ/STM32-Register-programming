@@ -1,0 +1,3 @@
+../Core/Src/UART2Config.c:10:6:Usart2Config	1
+../Core/Src/UART2Config.c:38:6:UART2_SendChar	2
+../Core/Src/UART2Config.c:45:6:UART2_SendString	2

@@ -1,5 +1,6 @@
 "./Core/Src/Delay.o"
 "./Core/Src/RccConfig.o"
+"./Core/Src/UART2Config.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"
 "./Core/Src/stm32f4xx_it.o"
