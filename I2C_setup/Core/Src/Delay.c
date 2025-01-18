@@ -1,30 +1,29 @@
 #include "Delay.h"
 #include "RccConfig.h"
 
-void TIM5Config(){
+void TIM4Config(){
 	//Enable TIM5
-	RCC->APB1ENR |= (1 << 3);
+	RCC->APB1ENR |= (1 << 2);
 
 	//Set prescaler to achieve 1 us/cycle and max count before reset
-	TIM5->PSC = 84 - 1;
-	TIM5->ARR = 0xffffffff;
+	TIM4->PSC = 84 - 1; //84MHz/84 = 1MHz => t = 1/MHz = 1us
+	TIM4->ARR = 0xffff;
 
 	//Clear UIF flag
-	TIM5->SR &= ~(1 << 0);
+	TIM4->SR &= ~(1 << 0);
 
-	//Enable counter and wait for it to enable
-	TIM5->CR1 |= (1<<0);
-	while(!(TIM5->SR & (1<<0)));
+	//Enable counter and wait for enable bit to set
+	TIM4->CR1 |= (1<<0);
+	while(!(TIM4->SR & (1<<0)));
 
 }
 
 void Delay_us(uint32_t time){
 	// Reset counter
-	TIM5->CNT = 0;
+	TIM4->CNT = 0;
 	// Wait until counter reaches time
-	while (TIM5->CNT < time);
+	while (TIM4->CNT < time);
 }
-
 
 void Delay_ms(uint32_t time){
 
